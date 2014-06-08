@@ -47,7 +47,6 @@ void loop()
    distance3 = time3 * 0.034;  
    
    
-  
     Serial.print(distance1 );
     Serial.print("|");
     Serial.print(distance2 );    
@@ -56,7 +55,7 @@ void loop()
     Serial.print("|");    
     Serial.println();
     
-  delay(200);  
+  delay(300);  
   
   
 }
