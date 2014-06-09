@@ -4,18 +4,18 @@
 #include <string>
 #include <unistd.h>
 #include "sample.hpp"
-#include "queue.h"
+#include "queue.hpp"
 
 int main()
 {
 
-//    navigation::sample smp("2112222|1221|999990220|");
-//    std::cout << smp.guide() << std::endl;
+    navigation::sample smp("2112222|1221|999990220|");
+    std::cout << smp.result() << std::endl;
 
     navigation::Queue q(3);
-    q<<2;
-    q<<2;
-    q<<2;
+    q << smp.result();
+    q << smp.result();
+    q << smp.result();
 
     std::cout << q.suggest() << std::endl;
 

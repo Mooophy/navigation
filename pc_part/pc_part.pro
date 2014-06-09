@@ -4,10 +4,9 @@ CONFIG -= app_bundle
 CONFIG -= qt
 CONFIG += c++11
 
-SOURCES += main.cpp \
-    queue.cpp
+SOURCES += main.cpp
 
 HEADERS += \
     sample.hpp \
-    queue.h
+    queue.hpp
 

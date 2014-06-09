@@ -55,7 +55,7 @@ public:
      *      2   :   mid
      *      3   :   right
      */
-    int guide() const
+    int result() const
     {
         if(left>mid && left>right)
             return 1;
