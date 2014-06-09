@@ -36,7 +36,9 @@ public:
      */
     std::size_t suggest()const
     {
-        return std::round(average());
+        float avrg = average();
+
+        return (avrg > 1.2 && avrg < 2.8)?  2   :   std::round(avrg);
     }
 
 private:
