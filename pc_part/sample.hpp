@@ -66,9 +66,9 @@ public:
     }
 
 private:
-    std::size_t left;
-    std::size_t mid;
-    std::size_t right;
+    float left;
+    float mid;
+    float right;
 };
 
 }//namespace
