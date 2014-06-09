@@ -3,37 +3,43 @@
 #include <vector>
 #include <string>
 #include <unistd.h>
+#include "sample.hpp"
 
 int main()
 {
-    //! build bluetooth stream.
-    std::string     raw_data;
-    std::fstream    blueTooth("/dev/rfcomm0");
-    std::vector<int> v(3);
-    while(blueTooth >> raw_data)
-    {
-        std::cout << raw_data << std::endl;
-        std::string distance0, distance1, distance2;
-        std::string::iterator input = raw_data.begin();
 
-        while(*input != '|')
-            distance0.push_back(*input++);
+    navigation::sample smp("211|1221|0220|");
 
-        ++input;
-        while(*input != '|')
-            distance1.push_back(*input++);
+    std::cout << smp.guide() << std::endl;
 
-        ++input;
-        while(*input != '|')
-            distance2.push_back(*input++);
+//    //! build bluetooth stream.
+//    std::string     raw_data;
+//    std::fstream    blueTooth("/dev/rfcomm0");
+//    std::vector<int> v(3);
+//    while(blueTooth >> raw_data)
+//    {
+//        std::cout << raw_data << std::endl;
+//        std::string distance0, distance1, distance2;
+//        std::string::iterator input = raw_data.begin();
 
-        v[0] = std::stoi(distance0);
-        v[1] = std::stoi(distance1);
-        v[2] = std::stoi(distance2);
+//        while(*input != '|')
+//            distance0.push_back(*input++);
+
+//        ++input;
+//        while(*input != '|')
+//            distance1.push_back(*input++);
+
+//        ++input;
+//        while(*input != '|')
+//            distance2.push_back(*input++);
+
+//        v[0] = std::stoi(distance0);
+//        v[1] = std::stoi(distance1);
+//        v[2] = std::stoi(distance2);
 
 
-        for(auto i : v)
-            std::cout << i << std::endl;
+//        for(auto i : v)
+//            std::cout << i << std::endl;
 
 
 //        if(v[0] >= v[1] && v[0] >= v[2]){
@@ -53,6 +59,6 @@ int main()
 
         //sleep(1);
         //system("play left.wav");
-    }
+//    }
 
 }
