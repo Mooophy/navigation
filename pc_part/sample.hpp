@@ -27,16 +27,19 @@ public:
         std::string temp;
         std::string::const_iterator input = raw.cbegin();
 
+        //! left sensor
         while(*input != '|')
             temp.push_back(*input++);
         left = std::stoi(temp);
 
+        //! mid sensor
         ++input;
         temp.clear();
         while(*input != '|')
             temp.push_back(*input++);
         mid  = std::stoi(temp);
 
+        //! right sensor
         ++input;
         temp.clear();
         while(*input != '|')
