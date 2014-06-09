@@ -37,9 +37,20 @@ int main()
 
         direction = data.suggest();
 
-        std::cout << "\nraw : " <<raw_data << std::endl;
-        std::cout << "smp : " << smp.result() << std::endl;
-        std::cout << "direction suggest: " << data.suggest() << std::endl;
+        std::cout   << "\nraw : "
+                    << "\033[1;31m"
+                    <<raw_data
+                    << "\033[0m\n";
+
+        std::cout   << "smp : "
+                    << "\033[1;33m"
+                    << smp.result()
+                    << "\033[0m\n";
+
+        std::cout   << "direction suggest: "
+                    << "\033[1;32m"
+                    << data.suggest()
+                    << "\033[0m\n";
     }
 
     back_ground.join();
