@@ -38,7 +38,7 @@ public:
     {
         float avrg = average();
 
-        return (avrg > 1.2 && avrg < 2.8)?  2   :   std::round(avrg);
+        return (avrg > 1.4 && avrg < 2.6)?  2   :   std::round(avrg);
     }
 
 private:

@@ -28,7 +28,7 @@ int main()
 
     std::thread back_ground(navigation::play, &direction);
 
-    navigation::Queue data(20);
+    navigation::Queue data(5);
     std::string raw_data;
     while(blueTooth >> raw_data)
     {
