@@ -46,6 +46,13 @@ int main()
                     << "\033[1;32m"
                     << data.suggest()
                     << "\033[0m\n";
+
+        std::cout   << "level l m r: "
+                    << "\033[1;36m"
+                    << data.level(data.average(data.left)) << "  "
+                    << data.level(data.average(data.mid))  << "  "
+                    << data.level(data.average(data.right)) << "  "
+                    << "\033[0m\n";
     }
 
     back_ground.join();

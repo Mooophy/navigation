@@ -65,9 +65,9 @@ public:
      */
     SizeType suggest() const
     {
-        bool l = detected(left,60,3);
-        bool m = detected(mid,60,3);
-        bool r = detected(right,60,3);
+        bool l = detected(left,80,7);
+        bool m = detected(mid,60,6);
+        bool r = detected(right,80,7);
 
         SizeType state = l<<8 | m<<4 | r<<0;
         SizeType ret = 0;
@@ -83,7 +83,13 @@ public:
         case 0x100:     //  left is detected, go right
             ret = 3;    break;
 
+        case 0x110:     //  left is detected, go right
+            ret = 3;    break;
+
         case 0x001:     //  right is detected, go left
+            ret = 1;    break;
+
+        case 0x011:     //  right is detected, go left
             ret = 1;    break;
 
         case 0x010:     //  middle is detected, go left
@@ -96,7 +102,7 @@ public:
     return ret;
     }
 
-private:
+//private:
     Deque left;
     Deque mid;
     Deque right;
