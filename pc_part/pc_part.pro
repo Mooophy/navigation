@@ -8,5 +8,6 @@ SOURCES += main.cpp
 
 HEADERS += \
     sample.hpp \
-    queue.hpp
+    queue.hpp \
+    data.hpp
 

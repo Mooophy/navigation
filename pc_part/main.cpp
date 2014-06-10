@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include "sample.hpp"
 #include "queue.hpp"
+#include "data.hpp"
 #include <thread>
 
 namespace navigation {
@@ -23,35 +24,40 @@ void play( std::size_t* direction )
 
 int main()
 {
-    std::fstream blueTooth("/dev/rfcomm0");
-    std::size_t direction = 0;
+    navigation::data data(10);
 
-    std::thread back_ground(navigation::play, &direction);
 
-    navigation::Queue data(10);
-    std::string raw_data;
-    while(blueTooth >> raw_data)
-    {
-        navigation::sample smp(raw_data);
-        data << smp.result();
 
-        direction = data.suggest();
 
-        std::cout   << "\nraw : "
-                    << "\033[1;31m"
-                    << raw_data
-                    << "\033[0m\n";
+//    std::fstream blueTooth("/dev/rfcomm0");
+//    std::size_t direction = 0;
 
-        std::cout   << "smp : "
-                    << "\033[1;33m"
-                    << smp.result()
-                    << "\033[0m\n";
+//    std::thread back_ground(navigation::play, &direction);
 
-        std::cout   << "direction suggest: "
-                    << "\033[1;32m"
-                    << data.suggest()
-                    << "\033[0m\n";
-    }
+//    navigation::Queue data(10);
+//    std::string raw_data;
+//    while(blueTooth >> raw_data)
+//    {
+//        navigation::sample smp(raw_data);
+//        data << smp.result();
 
-    back_ground.join();
+//        direction = data.suggest();
+
+//        std::cout   << "\nraw : "
+//                    << "\033[1;31m"
+//                    << raw_data
+//                    << "\033[0m\n";
+
+//        std::cout   << "smp : "
+//                    << "\033[1;33m"
+//                    << smp.result()
+//                    << "\033[0m\n";
+
+//        std::cout   << "direction suggest: "
+//                    << "\033[1;32m"
+//                    << data.suggest()
+//                    << "\033[0m\n";
+//    }
+
+//    back_ground.join();
 }
