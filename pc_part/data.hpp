@@ -77,10 +77,16 @@ public:
         case 0x101:     //  both left and right detected, go back.
             ret = 4;    break;
 
+        case 0x111:     //  both left and right detected, go back.
+            ret = 4;    break;
+
         case 0x100:     //  left is detected, go right
             ret = 3;    break;
 
         case 0x001:     //  right is detected, go left
+            ret = 1;    break;
+
+        case 0x010:     //  middle is detected, go left
             ret = 1;    break;
 
         default:        //  keep going
@@ -150,7 +156,7 @@ private:
     {
         int lvl = level(variance(d));
 
-        return average(d) > avg_limit && lvl > lvl_limit;
+        return average(d) < avg_limit && lvl < lvl_limit;
     }
 };
 
