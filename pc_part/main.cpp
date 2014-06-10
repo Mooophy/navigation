@@ -28,7 +28,7 @@ int main()
 
     std::thread back_ground(navigation::play, &direction);
 
-    navigation::Queue data(5);
+    navigation::Queue data(10);
     std::string raw_data;
     while(blueTooth >> raw_data)
     {
@@ -39,7 +39,7 @@ int main()
 
         std::cout   << "\nraw : "
                     << "\033[1;31m"
-                    <<raw_data
+                    << raw_data
                     << "\033[0m\n";
 
         std::cout   << "smp : "

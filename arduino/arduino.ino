@@ -55,7 +55,7 @@ void loop()
     Serial.print("|");    
     Serial.println();
     
-  delay(100);  
+  delay(50);  
   
   
 }

@@ -59,10 +59,18 @@ public:
     {
         if(left>mid && left>right)
             return 1;
-        else if(mid > right)
+        else if(mid > right || far_away())
             return 2;
         else
             return 3;
+    }
+
+    /**
+     * @brief far_away
+     */
+    bool far_away() const
+    {
+        return left > 100 && mid > 100 && right > 100;
     }
 
 private:
