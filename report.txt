@@ -1,0 +1,22 @@
+[cover page]
+[contents page]
+[introduction]
+
+The navigation tool implemented for this project gives the blind person direct feed back on obstacles and indicates which way to go. Several technologies were used to develop this tool including: C++ programming on PC, bluetooth communication development, embeded programming, electronic circuit design, CAD design, 3D printing and laser cutting.
+
+[aim]
+
+Develope a navigation tool to help blind person by using tectnologies learned.
+
+[objective]
+Design and manufacture a navigation tool that helpse blind people in an obstacle-rich environment.
+
+[methodology]
+
+Use CAD software to design a reliable and cost effective mechnical part. Use microcontroller to implemnet data acquisition. Use a wireless communication protocol to send all data to PC. Develop a programm that runs on PC to process the data and generates guiding voice accordingly.
+
+[Solution]
+
+
+ 
+
